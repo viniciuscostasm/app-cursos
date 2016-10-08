@@ -44,6 +44,22 @@ public class Curso implements Serializable {
     @Size(max = 500)
     @Column(name = "curso_descricao")
     private String cursoDescricao;
+    @Size(max = 20)
+    @Column(name = "curso_turno")
+    private String cursoTurno;
+    @Size(max = 60)
+    @Column(name = "curso_modalidade")
+    private String cursoModalidade;
+    @Size(max = 200)
+    @Column(name = "curso_coordenador")
+    private String cursoCoordenador;
+    @Size(max = 200)
+    @Column(name = "curso_duracao")
+    private String cursoDuracao;
+    @Column(name = "curso_avaliacao_mec")
+    private Integer cursoAvaliacaoMec;
+    @Column(name = "curso_mensalidade")
+    private Double cursoMensalidade;
     @Size(max = 50)
     @Column(name = "curso_status")
     private String cursoStatus;
@@ -107,6 +123,12 @@ public class Curso implements Serializable {
         hash = 23 * hash + Objects.hashCode(this.cursoDescricao);
         hash = 23 * hash + Objects.hashCode(this.cursoStatus);
         hash = 23 * hash + Objects.hashCode(this.cursoCategoria);
+        hash = 23 * hash + Objects.hashCode(this.cursoAvaliacaoMec);
+        hash = 23 * hash + Objects.hashCode(this.cursoTurno);
+        hash = 23 * hash + Objects.hashCode(this.cursoMensalidade);
+        hash = 23 * hash + Objects.hashCode(this.cursoModalidade);
+        hash = 23 * hash + Objects.hashCode(this.cursoCoordenador);
+        hash = 23 * hash + Objects.hashCode(this.cursoDuracao);
         return hash;
     }
 
@@ -137,6 +159,24 @@ public class Curso implements Serializable {
         if (!Objects.equals(this.cursoId, other.cursoId)) {
             return false;
         }
+        if (!Objects.equals(this.cursoTurno, other.cursoTurno)) {
+            return false;
+        }
+        if (!Objects.equals(this.cursoModalidade, other.cursoModalidade)) {
+            return false;
+        }
+        if (!Objects.equals(this.cursoAvaliacaoMec, other.cursoAvaliacaoMec)) {
+            return false;
+        }
+        if (!Objects.equals(this.cursoCoordenador, other.cursoCoordenador)) {
+            return false;
+        }
+        if (!Objects.equals(this.cursoDuracao, other.cursoDuracao)) {
+            return false;
+        }
+        if (!Objects.equals(this.cursoMensalidade, other.cursoMensalidade)) {
+            return false;
+        }
         return true;
     }
 
@@ -144,6 +184,90 @@ public class Curso implements Serializable {
     @Override
     public String toString() {
         return "br.ba.cimatec.acad.mapeamento.Curso[ cursoId=" + cursoId + " ]";
+    }
+
+    /**
+     * @return the cursoTurno
+     */
+    public String getCursoTurno() {
+        return cursoTurno;
+    }
+
+    /**
+     * @param cursoTurno the cursoTurno to set
+     */
+    public void setCursoTurno(String cursoTurno) {
+        this.cursoTurno = cursoTurno;
+    }
+
+    /**
+     * @return the cursoModalidade
+     */
+    public String getCursoModalidade() {
+        return cursoModalidade;
+    }
+
+    /**
+     * @param cursoModalidade the cursoModalidade to set
+     */
+    public void setCursoModalidade(String cursoModalidade) {
+        this.cursoModalidade = cursoModalidade;
+    }
+
+    /**
+     * @return the cursoCoordenador
+     */
+    public String getCursoCoordenador() {
+        return cursoCoordenador;
+    }
+
+    /**
+     * @param cursoCoordenador the cursoCoordenador to set
+     */
+    public void setCursoCoordenador(String cursoCoordenador) {
+        this.cursoCoordenador = cursoCoordenador;
+    }
+
+    /**
+     * @return the cursoDuracao
+     */
+    public String getCursoDuracao() {
+        return cursoDuracao;
+    }
+
+    /**
+     * @param cursoDuracao the cursoDuracao to set
+     */
+    public void setCursoDuracao(String cursoDuracao) {
+        this.cursoDuracao = cursoDuracao;
+    }
+
+    /**
+     * @return the cursoAvaliacaoMec
+     */
+    public Integer getCursoAvaliacaoMec() {
+        return cursoAvaliacaoMec;
+    }
+
+    /**
+     * @param cursoAvaliacaoMec the cursoAvaliacaoMec to set
+     */
+    public void setCursoAvaliacaoMec(Integer cursoAvaliacaoMec) {
+        this.cursoAvaliacaoMec = cursoAvaliacaoMec;
+    }
+
+    /**
+     * @return the cursoMensalidade
+     */
+    public Double getCursoMensalidade() {
+        return cursoMensalidade;
+    }
+
+    /**
+     * @param cursoMensalidade the cursoMensalidade to set
+     */
+    public void setCursoMensalidade(Double cursoMensalidade) {
+        this.cursoMensalidade = cursoMensalidade;
     }
     
 }
